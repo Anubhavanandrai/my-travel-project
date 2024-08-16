@@ -75,7 +75,7 @@ router.get('/user-approved-class', verifyToken, async (req, res) => {
       }
       const approvedClasses = await Class.find({ currentuser: _id, isApproved: true });
       if (approvedClasses.length === 0) {
-        return res.status(404).json({ error: 'No approved classes found for this user' });
+        return res.status(404).json({ msg: 'No approved classes found for this user' });
       }
       res.status(200).json(approvedClasses);
     } catch (error) {

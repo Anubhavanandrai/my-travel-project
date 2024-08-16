@@ -20,7 +20,7 @@ export const Carthandle = () => {
         "http://localhost:8000/cart/add-to-cart",
         Pro,
         {
-          headers: headers,
+          headers: headers(),
         }
       );
       if (added) {

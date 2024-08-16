@@ -21,7 +21,8 @@ function Mine() {
         return;
       }
       console.log(`Fetching data for status: ${currentStatus}`);
-      const response = await axios.get(url, { headers });
+      
+      const response = await axios.get(url, { headers:headers() });
       if (response.status === 200) {
         console.log(`Data fetched:`, response.data);
         setData(response.data);
